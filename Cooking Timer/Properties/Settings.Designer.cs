@@ -34,29 +34,5 @@ namespace Cooking_Timer.Properties {
                 this["AlwaysOnTop"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int StartLocation {
-            get {
-                return ((int)(this["StartLocation"]));
-            }
-            set {
-                this["StartLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point LastLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["LastLocation"]));
-            }
-            set {
-                this["LastLocation"] = value;
-            }
-        }
     }
 }

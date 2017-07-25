@@ -27,15 +27,18 @@ namespace Cooking_Timer
             timer.Interval = 1000;
             timerSound = new Timer();
             timerSound.Interval = 10;
+
+            timer.Tick += new EventHandler(TimerTick);
+            timerSound.Tick += new EventHandler(TimerTickSound);
         }
 
         public void button1_Click(object sender, EventArgs e)
         {
             if (timer.Enabled == false)
             {
-                timer.Tick += new EventHandler(TimerTick);
-                timerSound.Tick += new EventHandler(TimerTickSound);
                 timer.Start();
+
+                timerSound.Tick += new EventHandler(TimerTickSound);
                 timerSound.Start();
                 button1.Text = "Stop";
             }
@@ -43,8 +46,6 @@ namespace Cooking_Timer
             {
                 timer.Stop();
                 timerSound.Stop();
-                timer.Tick -= new EventHandler(TimerTick);
-                timerSound.Tick -= new EventHandler(TimerTickSound);
                 button1.Text = "Start";
             }
         }
@@ -53,8 +54,6 @@ namespace Cooking_Timer
         {
             timer.Stop();
             timerSound.Stop();
-            timer.Tick -= new EventHandler(TimerTick);
-            timerSound.Tick -= new EventHandler(TimerTickSound);
 
             hours = startHours;
             minutes = startMinutes;
@@ -97,6 +96,7 @@ namespace Cooking_Timer
                             minutes = startMinutes;
                             seconds = startSeconds;
 
+
                             timerSound.Tick += new EventHandler(TimerTickSound);
                             timerSound.Start();
                         }
@@ -107,7 +107,7 @@ namespace Cooking_Timer
                             seconds = startSeconds;
 
                             // remove event handler
-                            timer.Tick -= new EventHandler(TimerTick);
+                            timer.Stop();
                             button1.Text = "Start";
                             Fininshed = true;
                         }
@@ -119,6 +119,7 @@ namespace Cooking_Timer
             double current = ((hours * 60 * 60) + (minutes * 60) + (seconds));
             double start = ((startHours * 60 * 60) + (startMinutes * 60) + (startSeconds));
             double percent = (current / start) * 100.0;
+
 
             progressBar1.Value = (int)percent;
             if (Fininshed)
@@ -132,10 +133,8 @@ namespace Cooking_Timer
         {
             if (hours + minutes + seconds == 0)
             {
-
                 playaudio();
-
-                // remove event handler
+                
                 timerSound.Tick -= new EventHandler(TimerTickSound);
             }
 
@@ -176,12 +175,6 @@ namespace Cooking_Timer
                 this.seconds.ToString().PadLeft(2, '0'));
         }
 
-        private void playaudio() // defining the function
-        {
-            SoundPlayer audio = new SoundPlayer(Properties.Resources.Chime); // here WindowsFormsApplication1 is the namespace and Connect is the audio file name
-            audio.Play();
-        }
-
         public void MinuteRadio_CheckedChanged(object sender, EventArgs e)
         {
             RadioChanged();
@@ -194,8 +187,6 @@ namespace Cooking_Timer
             {
                 timer.Stop();
                 timerSound.Stop();
-                timer.Tick -= new EventHandler(TimerTick);
-                timerSound.Tick -= new EventHandler(TimerTickSound);
             }
 
             if (MinuteRadio3.Checked == true)
@@ -244,6 +235,12 @@ namespace Cooking_Timer
                 MinuteUpDown.Enabled = false;
                 SecondUpDown.Enabled = false;
             }
+        }
+
+        private void playaudio() // defining the function
+        {
+            SoundPlayer audio = new SoundPlayer(Properties.Resources.Chime); // here WindowsFormsApplication1 is the namespace and Connect is the audio file name
+            audio.Play();
         }
 
         public void HourUpDown_ValueChanged(object sender, EventArgs e)

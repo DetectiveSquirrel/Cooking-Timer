@@ -49,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.MainTab = new System.Windows.Forms.TabControl();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinuteUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondUpDown)).BeginInit();
-            this.MainTab.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
@@ -168,9 +168,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 87);
+            this.button2.Location = new System.Drawing.Point(6, 80);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 27);
+            this.button2.Size = new System.Drawing.Size(107, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = true;
@@ -178,9 +178,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 58);
+            this.button1.Location = new System.Drawing.Point(6, 51);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 27);
+            this.button1.Size = new System.Drawing.Size(107, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@
             // AutoRestart
             // 
             this.AutoRestart.AutoSize = true;
-            this.AutoRestart.Location = new System.Drawing.Point(6, 120);
+            this.AutoRestart.Location = new System.Drawing.Point(6, 110);
             this.AutoRestart.Name = "AutoRestart";
             this.AutoRestart.Size = new System.Drawing.Size(110, 17);
             this.AutoRestart.TabIndex = 0;
@@ -263,34 +263,34 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Seconds";
             // 
-            // MainTab
+            // tabControl1
             // 
-            this.MainTab.Controls.Add(this.tabPage1);
-            this.MainTab.Controls.Add(this.tabPage2);
-            this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTab.Location = new System.Drawing.Point(0, 0);
-            this.MainTab.Name = "MainTab";
-            this.MainTab.SelectedIndex = 0;
-            this.MainTab.Size = new System.Drawing.Size(476, 237);
-            this.MainTab.TabIndex = 10;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(473, 239);
+            this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.progressBar1);
-            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.BigTimer);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.SecondUpDown);
             this.tabPage1.Controls.Add(this.HourUpDown);
             this.tabPage1.Controls.Add(this.MinuteUpDown);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(468, 211);
+            this.tabPage1.Size = new System.Drawing.Size(465, 213);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             // 
@@ -301,18 +301,18 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(468, 211);
+            this.tabPage2.Size = new System.Drawing.Size(465, 213);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 7);
+            this.checkBox1.Location = new System.Drawing.Point(8, 6);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 17);
+            this.checkBox1.Size = new System.Drawing.Size(98, 17);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Top Most";
+            this.checkBox1.Text = "Always On Top";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -320,8 +320,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 237);
-            this.Controls.Add(this.MainTab);
+            this.ClientSize = new System.Drawing.Size(473, 239);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CookingTimerForm";
@@ -335,7 +335,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HourUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinuteUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondUpDown)).EndInit();
-            this.MainTab.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -365,7 +365,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TabControl MainTab;
+        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.CheckBox checkBox1;
