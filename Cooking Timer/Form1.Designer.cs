@@ -168,9 +168,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 80);
+            this.button2.Location = new System.Drawing.Point(6, 86);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
+            this.button2.Size = new System.Drawing.Size(107, 26);
             this.button2.TabIndex = 3;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = true;
@@ -178,9 +178,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 51);
+            this.button1.Location = new System.Drawing.Point(6, 57);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.Size = new System.Drawing.Size(107, 26);
             this.button1.TabIndex = 2;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@
             // AutoRestart
             // 
             this.AutoRestart.AutoSize = true;
-            this.AutoRestart.Location = new System.Drawing.Point(6, 110);
+            this.AutoRestart.Location = new System.Drawing.Point(6, 119);
             this.AutoRestart.Name = "AutoRestart";
             this.AutoRestart.Size = new System.Drawing.Size(110, 17);
             this.AutoRestart.TabIndex = 0;
