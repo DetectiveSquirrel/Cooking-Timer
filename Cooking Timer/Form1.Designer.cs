@@ -41,8 +41,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.AutoRestart = new System.Windows.Forms.CheckBox();
             this.HourUpDown = new System.Windows.Forms.NumericUpDown();
             this.MinuteUpDown = new System.Windows.Forms.NumericUpDown();
             this.SecondUpDown = new System.Windows.Forms.NumericUpDown();
@@ -50,11 +49,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MainTab = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HourUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinuteUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondUpDown)).BeginInit();
+            this.MainTab.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,7 +70,7 @@
             this.groupBox1.Controls.Add(this.MinuteRadio10);
             this.groupBox1.Controls.Add(this.MinuteRadio5);
             this.groupBox1.Controls.Add(this.MinuteRadio3);
-            this.groupBox1.Location = new System.Drawing.Point(2, 3);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(331, 45);
             this.groupBox1.TabIndex = 0;
@@ -133,7 +139,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(2, 158);
+            this.progressBar1.Location = new System.Drawing.Point(6, 161);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(331, 46);
             this.progressBar1.Step = 1;
@@ -143,7 +149,7 @@
             // 
             this.BigTimer.AutoSize = true;
             this.BigTimer.Font = new System.Drawing.Font("Roboto", 35F);
-            this.BigTimer.Location = new System.Drawing.Point(65, 96);
+            this.BigTimer.Location = new System.Drawing.Point(69, 99);
             this.BigTimer.Name = "BigTimer";
             this.BigTimer.Size = new System.Drawing.Size(203, 57);
             this.BigTimer.TabIndex = 2;
@@ -153,9 +159,8 @@
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(338, 3);
+            this.groupBox2.Controls.Add(this.AutoRestart);
+            this.groupBox2.Location = new System.Drawing.Point(342, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(118, 201);
             this.groupBox2.TabIndex = 3;
@@ -163,9 +168,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 80);
+            this.button2.Location = new System.Drawing.Point(6, 87);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
+            this.button2.Size = new System.Drawing.Size(107, 27);
             this.button2.TabIndex = 3;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = true;
@@ -173,38 +178,28 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 51);
+            this.button1.Location = new System.Drawing.Point(6, 58);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.Size = new System.Drawing.Size(107, 27);
             this.button1.TabIndex = 2;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox2
+            // AutoRestart
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 131);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Ring Forever";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 110);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(110, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Automatic Restart";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.AutoRestart.AutoSize = true;
+            this.AutoRestart.Location = new System.Drawing.Point(6, 120);
+            this.AutoRestart.Name = "AutoRestart";
+            this.AutoRestart.Size = new System.Drawing.Size(110, 17);
+            this.AutoRestart.TabIndex = 0;
+            this.AutoRestart.Text = "Automatic Restart";
+            this.AutoRestart.UseVisualStyleBackColor = true;
             // 
             // HourUpDown
             // 
             this.HourUpDown.Enabled = false;
-            this.HourUpDown.Location = new System.Drawing.Point(83, 73);
+            this.HourUpDown.Location = new System.Drawing.Point(87, 76);
             this.HourUpDown.Name = "HourUpDown";
             this.HourUpDown.Size = new System.Drawing.Size(50, 20);
             this.HourUpDown.TabIndex = 4;
@@ -214,7 +209,7 @@
             // MinuteUpDown
             // 
             this.MinuteUpDown.Enabled = false;
-            this.MinuteUpDown.Location = new System.Drawing.Point(139, 73);
+            this.MinuteUpDown.Location = new System.Drawing.Point(143, 76);
             this.MinuteUpDown.Maximum = new decimal(new int[] {
             60,
             0,
@@ -229,7 +224,7 @@
             // SecondUpDown
             // 
             this.SecondUpDown.Enabled = false;
-            this.SecondUpDown.Location = new System.Drawing.Point(195, 73);
+            this.SecondUpDown.Location = new System.Drawing.Point(199, 76);
             this.SecondUpDown.Maximum = new decimal(new int[] {
             60,
             0,
@@ -244,7 +239,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 56);
+            this.label2.Location = new System.Drawing.Point(93, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 7;
@@ -253,7 +248,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 56);
+            this.label3.Location = new System.Drawing.Point(146, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 8;
@@ -262,31 +257,77 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(196, 57);
+            this.label4.Location = new System.Drawing.Point(200, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Seconds";
             // 
+            // MainTab
+            // 
+            this.MainTab.Controls.Add(this.tabPage1);
+            this.MainTab.Controls.Add(this.tabPage2);
+            this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTab.Location = new System.Drawing.Point(0, 0);
+            this.MainTab.Name = "MainTab";
+            this.MainTab.SelectedIndex = 0;
+            this.MainTab.Size = new System.Drawing.Size(476, 237);
+            this.MainTab.TabIndex = 10;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.progressBar1);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.BigTimer);
+            this.tabPage1.Controls.Add(this.SecondUpDown);
+            this.tabPage1.Controls.Add(this.HourUpDown);
+            this.tabPage1.Controls.Add(this.MinuteUpDown);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(468, 211);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Main";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(468, 211);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Settings";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(9, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Top Most";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // CookingTimerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 206);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.SecondUpDown);
-            this.Controls.Add(this.MinuteUpDown);
-            this.Controls.Add(this.HourUpDown);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.BigTimer);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(476, 237);
+            this.Controls.Add(this.MainTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CookingTimerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "00:00:00 - Cooking Timer";
+            this.Load += new System.EventHandler(this.CookingTimerForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -294,8 +335,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.HourUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinuteUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondUpDown)).EndInit();
+            this.MainTab.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -312,8 +357,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox AutoRestart;
         private System.Windows.Forms.NumericUpDown HourUpDown;
         private System.Windows.Forms.NumericUpDown MinuteUpDown;
         private System.Windows.Forms.NumericUpDown SecondUpDown;
@@ -321,6 +365,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TabControl MainTab;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
